@@ -1,0 +1,47 @@
+<div class="container-fluid">
+
+  <h2>YOUR DASHBOARD</h2>
+    
+<div class="list-group">    
+{{#each posts as |post|}}
+  <a id="postPreview" class="list-group-item list-group-item-action">
+    <p >{{post.title}} by {{user.name}} on {{post.date_created}}</p>
+  </a>
+{{/each}}
+</div>
+</div>
+
+
+<div class="container-fluid">
+  <!-- Botão para abrir o modal -->
+  <button id="new-post-btn" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#post-modal">
+    NEW POST
+  </button>
+</div>
+
+<!-- Modal New Post-->
+<div id="post-modal" class="modal fade"  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="modal-post-form">
+          <div class="mb-3 ">
+            <label for="post-title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="post-title">
+          </div>
+          <div class="mb-3">
+            <label for="post-content"  class="form-label">Content</label>
+            <textarea class="form-control" id="post-content" rows="3"></textarea>
+          </div>
+          <button id="post-btn" type="submit" class="btn btn-success d-grid gap-2 col-6 mx-auto mb-3">Post</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/dashboard.js"></script>

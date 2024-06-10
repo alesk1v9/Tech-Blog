@@ -1,0 +1,13 @@
+<h1>home</h1>
+
+{{#each posts}}
+  <div class="post">
+    <h2>{{title}}</h2>
+    <p>{{content}}</p>
+    <p>Created on: {{date_created}}</p>
+    {{#if user_id}}
+      <p>User ID: {{user_id}}</p>
+    {{/if}}
+  </div>
+{{/each}}
+
